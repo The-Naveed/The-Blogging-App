@@ -30,39 +30,84 @@ const sign = async () => {
     let error3 = document.getElementById("error3");
     let error4 = document.getElementById("error4");
 
-    // Input validation
     if (!mail.value) {
         error1.style.display = "block";
+        error1.innerHTML = "Email is required";
         return;
+    } else {
+        error1.style.display = "none";
     }
-    error1.style.display = "none";
-
+    
+    // Validate the first name field
     if (!firstName.value) {
         error2.style.display = "block";
+        error2.innerHTML = "First name is required";
         return;
+    } else {
+        error2.style.display = "none";
     }
-    error2.style.display = "none";
-
+    
+    // Validate the last name field
     if (!lastName.value) {
         error3.style.display = "block";
+        error3.innerHTML = "Last name is required";
         return;
+    } else {
+        error3.style.display = "none";
     }
-    error3.style.display = "none";
-
+    
+    // Validate the password field
     if (!pass.value) {
         error4.style.display = "block";
+        error4.innerHTML = "Password is required";
         return;
-    }
-    if (pass.value.length <= 7) {
-        error4.innerHTML = "Password Must Be 8 Characters";
+    } else if (pass.value.length < 8) {
+        error4.style.display = "block";
+        error4.innerHTML = "Password must be at least 8 characters";
         return;
+    } else {
+        error4.style.display = "none";
     }
-    error4.style.display = "none";
+    
+    // Validate if the picture has been uploaded
+    // if (!picture.files.length) {
+    //     alert("Please upload your profile picture");
+    //     return;
+    // }
 
-    if (!picture.files.length) {
-        alert("Please upload your profile picture");
-        return;
-    }
+    // // Input validation
+    // if (!mail.value) {
+    //     error1.style.display = "block";
+    //     return;
+    // }
+    // error1.style.display = "none";
+
+    // if (!firstName.value) {
+    //     error2.style.display = "block";
+    //     return;
+    // }
+    // error2.style.display = "none";
+
+    // if (!lastName.value) {
+    //     error3.style.display = "block";
+    //     return;
+    // }
+    // error3.style.display = "none";
+
+    // if (!pass.value) {
+    //     error4.style.display = "block";
+    //     return;
+    // }
+    // if (pass.value.length <= 7) {
+    //     error4.innerHTML = "Password Must Be 8 Characters";
+    //     return;
+    // }
+    // error4.style.display = "none";
+
+    // if (!picture.files.length) {
+    //     alert("Please upload your profile picture");
+    //     return;
+    // }
 
     // Store user details locally
     localStorage.setItem("First Name", firstName.value);
@@ -77,7 +122,7 @@ const sign = async () => {
         <img height="50px" width="50px" src="https://i.gifer.com/ZKZg.gif">
         <br>
         <br>
-        <h5>Uploading your blog please wait...</h5>
+        <h5>Uploading your data please wait...</h5>
     </div>
     `
 

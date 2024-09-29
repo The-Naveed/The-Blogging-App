@@ -110,7 +110,7 @@ const post = async _ => {
                                     alt="Profile picture">
                             </div>
                             <div class="info2">
-                                <span>${localStorage.getItem("Name")}</span><br><span>Posted on ${formattedDate}</span>
+                                <span><strong>${localStorage.getItem("Name")}</strong></span><br><span>Posted on ${formattedDate}</span>
                             </div>
                         </h5>
                         <hr>

@@ -10,11 +10,19 @@ setInterval(() => {
   const seconds = now.getSeconds().toString().padStart(2, '0');
 
   const formattedTime = `${hours}:${minutes}:${seconds}`;
-
-  // console.log(`${formattedDate}, ${formattedTime}`);
   const time = document.getElementById("time")
   time.innerHTML = `${formattedDate}, ${formattedTime}`
 }, 1000);
+
+
+window.onload = function() {
+  if (!localStorage.getItem('pageReloaded')) {
+      setTimeout(function() {
+          location.reload();
+          localStorage.setItem('pageReloaded', 'true');
+      }, 2000);
+  }
+};
 
 
 import {
@@ -35,6 +43,7 @@ const uName = document.getElementById("name")
 uName.innerHTML = localStorage.getItem("Name")
 const pic = document.getElementById("img")
 pic.src = localStorage.getItem("Profile")
+
 
 
 const logout = () => {
@@ -68,8 +77,9 @@ querySnapshot.forEach((doc) => {
 
 const picture = await getDocs(collection(db, localStorage.getItem("User ID")));
 picture.forEach((doc) => {
-    localStorage.setItem("Name",doc.data().firstName + " " + doc.data().lastName)
-    localStorage.setItem("Profile",doc.data().Picture)
+  localStorage.setItem("Name", doc.data().firstName + " " + doc.data().lastName)
+  localStorage.setItem("Profile", doc.data().Picture)
+  window.location.reloa
 });
 
 
