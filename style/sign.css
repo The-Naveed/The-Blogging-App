@@ -3,7 +3,7 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color:wheat;
+    color:#8af00c;
     background-color:rgb(20, 20, 20);
     font-weight: bold;
 }
@@ -33,7 +33,7 @@ button{
     width: 400px;
     padding: 20px;
     border-radius: 20px ;
-    box-shadow: 0 0 10px wheat;
+    box-shadow: 0 0 10px #8af00c;
 }
 
 .sign ::placeholder {
@@ -53,4 +53,17 @@ button{
 
 h2{
     font-size: 12px;
+}
+
+.error0 , .error1 , .error2 , .error3 , .error4{
+    text-align: left;
+    color: red;
+    display: none;
+}
+
+.wholeBody{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
